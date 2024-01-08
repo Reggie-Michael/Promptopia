@@ -19,7 +19,7 @@ const Feed = () => {
   const [allPosts, setAllPosts] = useState([]);
 
   // Search states
-  // const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState("");
   // const [searchTimeout, setSearchTimeout] = useState(null);
   // const [searchedResults, setSearchedResults] = useState([]);
 
@@ -71,7 +71,7 @@ const Feed = () => {
           type="text"
           placeholder="Search for a tag or a username"
           value={searchText}
-          onChange={handleSearchChange}
+          onChange={"handleSearchChange"}
           required
           className="search_input_peer"
         />
