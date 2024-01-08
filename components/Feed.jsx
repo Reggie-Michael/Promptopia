@@ -76,7 +76,7 @@ const Feed = () => {
           className="search_input_peer"
         />
       </form>
-      <PromptCardList data={[post]} handleTagClick={() => {}} />
+      <PromptCardList data={allPosts} handleTagClick={() => {}} />
     </section>
   );
 };
