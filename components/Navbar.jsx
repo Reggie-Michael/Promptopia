@@ -51,27 +51,21 @@ const Navbar = () => {
             </Link>
           </div>
         ) : (
-           <div className="flex gap-3 md:gap-5">
-            <Link href="/createPrompt" className="black_btn">
-              Create Post
-            </Link>
-
-            <button type="button" onClick={signOut} className="outline_btn">
-              Sign Out
-            </button>
-
-            <Link href="/profile">
-              <Image
-                src={session?.user.image}
-                width={37}
-                height={37}
-                className="rounded-full"
-                alt="profile"
-              />
-            </Link>
-          </div>
-          
-          
+          <>
+            {providers &&
+              Object.values(providers).map((provider) => (
+                <button
+                  type="button"
+                  key={provider.name}
+                  onClick={() => {
+                    signIn(provider.id);
+                  }}
+                  className="black_btn"
+                >
+                  Sign In
+                </button>
+              ))}
+          </>
         )}
       </div>
       {/* mobile Nav  */}
@@ -98,7 +92,7 @@ const Navbar = () => {
                   My Profile
                 </Link>
                 <Link
-                  href="/createPrompt"
+                  href="/create-prompt"
                   className="dropdown_link"
                   onClick={() => setToggleDropdown(false)}
                 >
